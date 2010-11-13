@@ -1,0 +1,14 @@
+This is a complete example of how to use GLSurfaceView and native code to draw
+old-skool pixel buffer graphics on the Android platform.  It is related to this
+[blog post][] about the Android NDK.
+
+The build tool used is [SCons][]. To compile the code, run
+as follows:
+
+    scons ANDROID_NDK=/path/to/android-ndk-r4b ANDROID_SDK=/path/to/android-sdk-linux_86
+
+The ANDROID_NDK and ANDROID_SDK variables are cached for future runs.
+
+
+[blog post]: http://quirkygba.blogspot.com/2010/10/android-native-coding-in-c.html
+[SCons]: http://www.scons.org
