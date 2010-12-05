@@ -27,8 +27,6 @@ lib = env.NdkBuild('libs/armeabi/libglbuffer.so',
                    inputs=[Glob('jni/*.c'),
                            '#/jni/Android.mk'])
 
-env.Clean(lib, ['#/libs', '#/obj'])
-
 # builds the Java portion of the code and
 # combines it with the native library
 app = env.AndroidApp('GLBuffer', native_folder='#/libs')
