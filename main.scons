@@ -22,15 +22,17 @@ if GetOption('help'):
     Return()
 
 # create the native library
-ndk_lib = env.SharedLibrary('glbuffer', Glob('jni/*.c'),
-              LIBS=['$LIBS', 'GLESv1_CM'])
+lib = env.NdkBuild('libs/armeabi/libglbuffer.so',
+                   app_root="#",
+                   inputs=[Glob('jni/*.c'),
+                           '#/jni/Android.mk'])
 
-# install to libs/armeabi
-lib = env.Install('libs/armeabi', ndk_lib)
+env.Clean(lib, ['#/libs', '#/obj'])
 
 # builds the Java portion of the code and
 # combines it with the native library
-app = env.AndroidApp('GLBuffer')
+app = env.AndroidApp('GLBuffer', native_folder='#/libs')
+env.Depends(app, lib)
 
 # copy to the top level bin directory
 env.Install('#bin', app)
