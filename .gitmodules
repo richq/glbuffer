@@ -1,3 +1,0 @@
-[submodule "site_scons/site_tools/android"]
-	path = site_scons/site_tools/android
-	url = git://github.com/richq/scons-android.git

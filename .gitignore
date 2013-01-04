@@ -1,5 +1,3 @@
-config.log
-.build/
 *.pyc
 tags
 cscope.files
@@ -9,3 +7,8 @@ cscope.po.out
 bin/
 libs/
 obj/
+build.xml
+gen/
+local.properties
+proguard-project.txt
+project.properties

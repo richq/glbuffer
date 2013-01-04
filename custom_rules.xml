@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="custom_rules">
+
+    <condition property="ndk.dir" value="${env.ANDROID_NDK}">
+        <isset property="env.ANDROID_NDK" />
+    </condition>
+    <property name="ndk.cmd" value="ndk-build"/>
+    <fail
+        message="ndk.dir is missing. Set it in local.properties or inject it through the ANDROID_NDK environment variable."
+        unless="ndk.dir"/>
+
+    <target name="-pre-build">
+        <exec executable="${ndk.dir}/${ndk.cmd}" failonerror="true">
+            <arg line="-j2"/>
+        </exec>
+    </target>
+
+    <target name="-pre-clean">
+        <exec executable="${ndk.dir}/${ndk.cmd}" failonerror="true">
+            <arg line="clean"/>
+        </exec>
+    </target>
+</project>
