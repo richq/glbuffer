@@ -5,6 +5,6 @@ before_install:
   - tar -xf sdk.tar.gz
   - tar -xf ndk.tar.bz2
   - export ANDROID_HOME=$(pwd)/android-sdk-linux
-  - $ANDROID_HOME/tools/android update sdk --filter platform-tools,tools,android-8 --no-ui --force
+  - $ANDROID_HOME/tools/android update sdk --filter platform-tools,android-8 --no-ui --force
 install: ./prepare-android-build.sh $ANDROID_HOME
 script: ant debug
