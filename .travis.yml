@@ -1,10 +1,10 @@
-language: java
+language: android
+android:
+  components:
+    - platform-tools
+    - tools
 before_install:
-  - wget --timeout=30 http://dl.google.com/android/android-sdk_r21.0.1-linux.tgz -O sdk.tar.gz
   - wget --timeout=30 http://dl.google.com/android/ndk/android-ndk-r8d-linux-x86.tar.bz2 -O ndk.tar.bz2
-  - tar -xf sdk.tar.gz
   - tar -xf ndk.tar.bz2
-  - export ANDROID_HOME=$(pwd)/android-sdk-linux
-  - $ANDROID_HOME/tools/android update sdk --filter platform-tools,android-8 --no-ui --force
-install: ./prepare-android-build.sh $ANDROID_HOME
+install: ./prepare-android-build.sh $(dirname $(dirname $(which android))) $(pwd)/android-ndk-r8d
 script: ant debug
