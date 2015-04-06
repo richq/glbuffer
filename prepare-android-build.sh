@@ -23,6 +23,7 @@ if test x"$NDK" = x ; then
     NDK=$(ls -1d $(dirname $SDK)/android-ndk-* | tail -1)
 fi
 
-$SDK/tools/android update project -n glbuffer -p . --target android-4
+exampletarget=$($SDK/tools/android list targets | awk '/android-[0-9]/{gsub("\"", ""); split($4, a, "-"); if (a[2] >= 4) { print $4}}' | head -n1)
+$SDK/tools/android update project -n glbuffer -p . --target $exampletarget
 
 echo "ndk.dir=$NDK" >> local.properties
