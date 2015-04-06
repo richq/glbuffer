@@ -6,5 +6,6 @@ android:
 before_install:
   - wget --timeout=30 http://dl.google.com/android/ndk/android-ndk-r8d-linux-x86.tar.bz2 -O ndk.tar.bz2
   - tar -xf ndk.tar.bz2
+  - which android
 install: ./prepare-android-build.sh $(dirname $(dirname $(which android))) $(pwd)/android-ndk-r8d
 script: ant debug
