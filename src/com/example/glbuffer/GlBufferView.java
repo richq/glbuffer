@@ -1,4 +1,4 @@
-package glbuffer.app;
+package com.example.glbuffer;
 
 import javax.microedition.khronos.opengles.GL10;
 import javax.microedition.khronos.egl.EGLConfig;

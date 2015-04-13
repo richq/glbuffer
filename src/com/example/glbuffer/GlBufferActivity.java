@@ -1,4 +1,4 @@
-package glbuffer.app;
+package com.example.glbuffer;
 
 import android.app.Activity;
 import android.os.Bundle;

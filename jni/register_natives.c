@@ -7,7 +7,7 @@
 #define NELEM(x) ((int)(sizeof(x) / sizeof((x)[0])))
 #endif
 
-static const char *s_class_path_name = "glbuffer/app/GlBufferView";
+static const char *s_class_path_name = "com/example/glbuffer/GlBufferView";
 
 static JNINativeMethod s_methods[] = {
 	{"native_start", "()V", (void*) native_start},

@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-    <glbuffer.app.GlBufferView
+    <com.example.glbuffer.GlBufferView
         android:id="@+id/glbuffer_view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"/>
